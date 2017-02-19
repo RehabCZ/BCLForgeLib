@@ -1,13 +1,12 @@
 package net.kaikk.mc.bcl.forgelib;
 
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldProvider;
 import net.minecraft.world.WorldServer;
+import net.minecraftforge.common.DimensionManager;
 
 public class Util {
 	public static World getWorld(String worldName) {
-		for (WorldServer ws : MinecraftServer.getServer().worldServers) {
+		for (WorldServer ws : DimensionManager.getWorlds()) {
 			if (ws.getWorldInfo().getWorldName().equals(worldName)) {
 				return ws;
 			}
@@ -16,6 +15,6 @@ public class Util {
 	}
 	
 	public static World getWorld(int id) {
-		return WorldProvider.getProviderForDimension(id).worldObj;
+		return DimensionManager.getWorld(id);
 	}
 }
