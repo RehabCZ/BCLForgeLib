@@ -17,8 +17,14 @@ buildscript {
 
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-def buildNumber = System.hasProperty("BUILD_NUMBER") ? System.getenv("BUILD_NUMBER") : '0'
-version = "1.0-${buildNumber}"
+
+version = "1.0"
+
+def ENV = System.getenv()
+if (ENV.BUILD_NUMBER) {
+    version = version + "." + "${System.getenv().BUILD_NUMBER}"
+}
+
 group= "net.kaikk.mc.bcl.forge" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "BCLForgeLib"
 
