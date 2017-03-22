@@ -18,7 +18,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 
 def buildNumber = project.hasProperty("buildNumber") ? buildNumber : '0'
-version = "1.0-${build_number}"
+version = "1.0-${buildNumber}"
 group= "net.kaikk.mc.bcl.forge" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "BCLForgeLib"
 
