@@ -19,7 +19,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 
 version = "1.0"
 group= "net.kaikk.mc.bcl.forge" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "BCLForgeLib"
+archivesBaseName = "bclforgelib"
 
 minecraft {
     version = "1.10.2-12.18.3.2185"

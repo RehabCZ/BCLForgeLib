@@ -20,7 +20,7 @@ import net.minecraftforge.fml.common.event.FMLLoadCompleteEvent;
 
 @Mod(modid = BCLForgeLib.MODID, version = BCLForgeLib.VERSION, acceptableRemoteVersions = "*")
 public class BCLForgeLib {
-	public static final String MODID = "BCLForgeLib";
+	public static final String MODID = "bclforgelib";
 	public static final String VERSION = "1.0";
 	private HashMap<String, Ticket> tickets; // World name - Ticket
 	private HashMap<String, List<ChunkLoader>> chunkLoaders; // World name - Chunk Loaders

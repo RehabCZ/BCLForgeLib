@@ -1,13 +1,13 @@
 [
 {
-  "modid": "BCLForgeLib",
+  "modid": "bclforgelib",
   "name": "BetterChunkLoader Forge Lib",
   "description": "BetterChunkLoader forge server library",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["KaiNoMood"],
+  "authorList": ["KaiNoMood","KasperFranz"],
   "credits": "",
   "logoFile": "",
   "screenshots": [],
