@@ -6,4 +6,5 @@ This mod doesn't have any configs, commands it is only providing the needed comm
 
 If you have any issues with it please make an issue.
 
-The latest builds can be found on our [CI server](http://ci.communitybuilt.net/job/BCLForgeLib/) which is provided by Community Built
+~~The latest builds can be found on our [CI server](http://ci.communitybuilt.net/job/BCLForgeLib/)~~ The latest version can right now be found under releases.
+
