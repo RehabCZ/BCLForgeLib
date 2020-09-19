@@ -1,10 +1,9 @@
 # BCLForgeLib
-[![Build Status](http://ci.communitybuilt.net/job/BCLForgeLib/badge/icon)](http://ci.communitybuilt.net/job/BCLForgeLib/)
 
 This Forge mod is a library made for [BetterChunkLoader](https://github.com/KasperFranz/BetterChunkLoader) to be able to load Chunks without any issues.
-This mod doesn't have any configs, commands it is only providing the needed commands to load chunks for BetterChunkLoader :).
+This mod doesn't have any configurations or commands it is only providing the glue needed for BetterChunkLoader  to load chunks.
 
-If you have any issues with it please make an issue.
+If you have any issues with this library please create an issue.
 
-~~The latest builds can be found on our [CI server](http://ci.communitybuilt.net/job/BCLForgeLib/)~~ The latest version can right now be found under releases.
+The latest version can be found under releases.
 
