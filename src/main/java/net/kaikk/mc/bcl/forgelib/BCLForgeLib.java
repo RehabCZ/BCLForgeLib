@@ -1,26 +1,26 @@
 package net.kaikk.mc.bcl.forgelib;
 
-import net.minecraft.util.math.ChunkPos;
-import net.minecraft.world.World;
-import net.minecraftforge.common.ForgeChunkManager;
-import net.minecraftforge.common.ForgeChunkManager.Ticket;
-import net.minecraftforge.common.ForgeChunkManager.Type;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.Mod.Instance;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLLoadCompleteEvent;
-
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import net.minecraft.world.ChunkCoordIntPair;
+import net.minecraft.world.World;
+import net.minecraftforge.common.ForgeChunkManager;
+import net.minecraftforge.common.ForgeChunkManager.Ticket;
+import net.minecraftforge.common.ForgeChunkManager.Type;
+import net.minecraftforge.common.MinecraftForge;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
+
 @Mod(modid = BCLForgeLib.MODID, version = BCLForgeLib.VERSION, acceptableRemoteVersions = "*")
 public class BCLForgeLib {
-	public static final String MODID = "bclforgelib";
+	public static final String MODID = "BCLForgeLib";
 	public static final String VERSION = "1.0";
 	private HashMap<String, Ticket> tickets; // World name - Ticket
 	private HashMap<String, List<ChunkLoader>> chunkLoaders; // World name - Chunk Loaders
@@ -131,14 +131,14 @@ public class BCLForgeLib {
 			BCLForgeLib.instance.tickets.put(worldName, ticket);
 		}
 
-		ForgeChunkManager.forceChunk(ticket, new ChunkPos(chunkX, chunkZ));
+		ForgeChunkManager.forceChunk(ticket, new ChunkCoordIntPair(chunkX, chunkZ));
 	}
 	
 	void unloadChunk(String worldName, int chunkX, int chunkZ) {
 		Ticket ticket = this.tickets.get(worldName);
 		if (ticket!=null) {
 
-			ForgeChunkManager.unforceChunk(ticket, new ChunkPos(chunkX, chunkZ));
+			ForgeChunkManager.unforceChunk(ticket, new ChunkCoordIntPair(chunkX, chunkZ));
 		}
 	}
 	

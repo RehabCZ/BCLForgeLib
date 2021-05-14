@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
         maven {
             name = "forge"
-            url = "http://files.minecraftforge.net/maven"
+            url = "https://files.minecraftforge.net/maven"
         }
         maven {
             name = "sonatype"
@@ -11,29 +11,46 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+        classpath ('com.anatawa12.forge:ForgeGradle:1.2-1.0.+') {
+            changing = true
+        }
     }
 }
 
-apply plugin: 'net.minecraftforge.gradle.forge'
-
-version = "1.1"
-
-def ENV = System.getenv()
-if (ENV.BUILD_NUMBER) {
-    version = version + "." + "${System.getenv().BUILD_NUMBER}"
+plugins {
+    id 'java-library'
 }
 
-group= "net.kaikk.mc.bcl.forge" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "bclforgelib"
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
+apply plugin: 'forge'
+
+version = "1.0"
+group = "net.kaikk.mc.bcl.forge" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "BCLForgeLib"
 
 minecraft {
-    version = "1.10.2-12.18.3.2185"
+    version = "1.7.10-10.13.2.1291"
     runDir = "eclipse"
-
-    mappings = "snapshot_20161111"
+    mappings = 'stable_12'
 }
 
+dependencies {
+    // you may put jars on which you depend on in ./libs
+    // or you may define them like so..
+    //compile "some.group:artifact:version:classifier"
+    //compile "some.group:artifact:version"
+      
+    // real examples
+    //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
+    //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
+
+    // for more info...
+    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
+    // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
+}
 
 processResources
 {
@@ -53,4 +70,8 @@ processResources
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
 }
